@@ -1,8 +1,10 @@
 require_relative '../setup'
+
 puts "Exercise 1"
 puts "----------"
 
 class Stores < ActiveRecord::Base
+  has_many :employees
 
   validates :name, length: {minimum: 3}
   validates :annual_revenue, length: {minimum: 0}
