@@ -32,5 +32,3 @@ Stores.create(name: 'Gastown',
               womens_apparel: false)
 
 puts Stores.count
-
-# Your code goes below here ...
