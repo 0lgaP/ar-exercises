@@ -11,10 +11,15 @@ puts "----------"
 class Employee < ActiveRecord::Base
   belongs_to :store
 
+  before_create :password_gen
+
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :hourly_rate, :inclusion => 40..200
-
+  
+  def password_gen
+    return ('a'..'z').to_a.shuffle[0,8].join
+  end
   
 end
 
