@@ -6,24 +6,24 @@ require_relative './exercise_3'
 puts "Exercise 4"
 puts "----------"
 
-Stores.create(name: 'Surrey', 
+Store.create(name: 'Surrey', 
               annual_revenue: 224000, 
               mens_apparel: false,
               womens_apparel: true)
 
-Stores.create(name: 'Whistler', 
+Store.create(name: 'Whistler', 
               annual_revenue: 1900000, 
               mens_apparel: true,
               womens_apparel: false)
 
-Stores.create(name: 'Yaletown',
+Store.create(name: 'Yaletown',
               annual_revenue: 430000,
               mens_apparel: true,
               womens_apparel: true)
 
-@mens_stores = Stores.where(mens_apparel: true, womens_apparel: false)
+@mens_stores = Store.where(mens_apparel: true, womens_apparel: false)
 
-@womens_stores = Stores.where("mens_apparel = ? AND womens_apparel = ? AND annual_revenue < ?", false, true, 1000000)
+@womens_stores = Store.where("mens_apparel = ? AND womens_apparel = ? AND annual_revenue < ?", false, true, 1000000)
 
 puts "--------------------------"
 

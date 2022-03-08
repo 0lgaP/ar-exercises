@@ -3,7 +3,7 @@ require_relative '../setup'
 puts "Exercise 1"
 puts "----------"
 
-class Stores < ActiveRecord::Base
+class Store < ActiveRecord::Base
   has_many :employees
 
   validates :name, length: {minimum: 3}
@@ -18,19 +18,19 @@ class Stores < ActiveRecord::Base
 
 end
 
-Stores.create(name: 'Burnaby', 
+Store.create(name: 'Burnaby', 
               annual_revenue: 300000, 
               mens_apparel: true,
               womens_apparel: true)
 
-Stores.create(name: 'Richmond', 
+Store.create(name: 'Richmond', 
               annual_revenue: 1260000, 
               mens_apparel: false,
               womens_apparel: true)
 
-Stores.create(name: 'Gastown', 
+Store.create(name: 'Gastown', 
               annual_revenue: 190000, 
               mens_apparel: true,
               womens_apparel: false)
 
-puts Stores.count
+puts Store.count

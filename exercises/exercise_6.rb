@@ -10,7 +10,14 @@ puts "----------"
 
 class Employee < ActiveRecord::Base
   belongs_to :store
+
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :hourly_rate, :inclusion => 40..200
+
+  
 end
+
 
 @store1.employees.create(first_name: "Khurram", last_name: "Virani", hourly_rate: 60)
 @store1.employees.create(first_name: "Andy", last_name: "Lindsay", hourly_rate: 120)

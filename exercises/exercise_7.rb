@@ -9,4 +9,15 @@ require_relative './exercise_6'
 puts "Exercise 7"
 puts "----------"
 
-# Your code goes here ...
+puts "Add a store"
+user_store = gets.chomp.to_s
+
+@new_store = Store.create(name: user_store)
+
+if @new_store.errors.any?
+  @new_store.errors.each do |attribute, message|
+    puts "\n"
+    puts "#{attribute} = #{message}"
+    puts "\n"
+  end
+end
