@@ -8,22 +8,6 @@ require_relative './exercise_5'
 puts "Exercise 6"
 puts "----------"
 
-class Employee < ActiveRecord::Base
-  belongs_to :store
-
-  before_create :password_gen
-
-  validates :first_name, presence: true
-  validates :last_name, presence: true
-  validates :hourly_rate, :inclusion => 40..200
-  
-  def password_gen
-    return ('a'..'z').to_a.shuffle[0,8].join
-  end
-  
-end
-
-
 @store1.employees.create(first_name: "Khurram", last_name: "Virani", hourly_rate: 60)
 @store1.employees.create(first_name: "Andy", last_name: "Lindsay", hourly_rate: 120)
 @store1.employees.create(first_name: "Haverton", last_name: "Oliviera", hourly_rate: 40)
